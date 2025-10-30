@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Style Editor - FAQ Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="assets/logo.jpg" alt="Logo" class="logo">
+        <span class="brand-name">FAQ Generator</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Generator</a>
+        <a href="style-editor.html" class="nav-link active">Style Editor</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>FAQ Style Editor</h1>
+    <p class="instructions">Customize the appearance of your FAQ accordion with the controls below.</p>
+    
+    <div class="editor-layout">
+      <div class="controls-panel">
+        <h2>Style Controls</h2>
+        
+        <div class="control-group">
+          <h3>Colors</h3>
+          
+          <div class="control">
+            <label>Question Color:</label>
+            <input type="color" id="questionColor" value="#1111ff">
+            <input type="text" id="questionColorText" value="#1111ff" class="color-text">
+          </div>
+          
+          <div class="control">
+            <label>Question Hover Color:</label>
+            <input type="color" id="questionHoverColor" value="#000000">
+            <input type="text" id="questionHoverColorText" value="#000000" class="color-text">
+          </div>
+          
+          <div class="control">
+            <label>Icon Color:</label>
+            <input type="color" id="iconColor" value="#7B2CBF">
+            <input type="text" id="iconColorText" value="#7B2CBF" class="color-text">
+          </div>
+          
+          <div class="control">
+            <label>Answer Color:</label>
+            <input type="color" id="answerColor" value="#333333">
+            <input type="text" id="answerColorText" value="#333333" class="color-text">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3>Typography</h3>
+          
+          <div class="control">
+            <label>Question Font Size:</label>
+            <input type="range" id="questionFontSize" min="14" max="24" value="18">
+            <span id="questionFontSizeValue">18px</span>
+          </div>
+          
+          <div class="control">
+            <label>Answer Font Size:</label>
+            <input type="range" id="answerFontSize" min="12" max="20" value="16">
+            <span id="answerFontSizeValue">16px</span>
+          </div>
+          
+          <div class="control">
+            <label>Question Font Weight:</label>
+            <select id="questionFontWeight">
+              <option value="400">Normal</option>
+              <option value="500">Medium</option>
+              <option value="600">Semi Bold</option>
+              <option value="700" selected>Bold</option>
+              <option value="800">Extra Bold</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3>Layout</h3>
+          
+          <div class="control">
+            <label>Container Max Width:</label>
+            <input type="range" id="containerWidth" min="400" max="1200" value="800">
+            <span id="containerWidthValue">800px</span>
+          </div>
+          
+          <div class="control">
+            <label>List Margin Right:</label>
+            <input type="range" id="listMargin" min="100" max="500" value="400">
+            <span id="listMarginValue">400px</span>
+          </div>
+          
+          <div class="control">
+            <label>Border Color:</label>
+            <input type="color" id="borderColor" value="#e0e0e0">
+            <input type="text" id="borderColorText" value="#e0e0e0" class="color-text">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3>Reset & Actions</h3>
+          <button id="resetStyles" class="secondary-btn">Reset to Default</button>
+          <button id="copyStyles">Copy CSS Code</button>
+        </div>
+      </div>
+
+      <div class="preview-panel">
+        <h2>Live Preview</h2>
+        <div id="stylePreview"></div>
+        
+        <div class="code-output">
+          <h3>Generated CSS Code:</h3>
+          <textarea id="cssOutput" readonly></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="style-editor.js"></script>
+</body>
+</html>
