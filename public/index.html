@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ Embed Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="/assets/logo.jpg" alt="Logo" class="logo">
+        <span class="brand-name">FAQ Generator</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Generator</a>
+        <a href="style-editor.html" class="nav-link">Style Editor</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>FAQ Embed Code Generator</h1>
+    <p class="instructions">
+      Use the toolbar to format your text, or paste your questions and answers below using this format:
+    </p>
+    <pre class="example">
+Q: What is your return policy?
+A: • Returns accepted within 30 days.
+• Must be in original packaging.
+• Refund processed in 5–7 business days.
+
+Q: Do you offer international shipping?
+A: Yes, we ship worldwide via trusted couriers.
+    </pre>
+
+    <!-- Rich Text Editor Toolbar -->
+    <div class="editor-toolbar">
+      <div class="toolbar-group">
+        <button type="button" class="toolbar-btn" data-command="bold" title="Bold">
+          <i class="fas fa-bold"></i>
+        </button>
+        <button type="button" class="toolbar-btn" data-command="italic" title="Italic">
+          <i class="fas fa-italic"></i>
+        </button>
+        <button type="button" class="toolbar-btn" data-command="underline" title="Underline">
+          <i class="fas fa-underline"></i>
+        </button>
+      </div>
+
+      <div class="toolbar-group">
+        <button type="button" class="toolbar-btn" data-command="insertUnorderedList" title="Bullet List">
+          <i class="fas fa-list-ul"></i>
+        </button>
+        <button type="button" class="toolbar-btn" data-command="insertOrderedList" title="Numbered List">
+          <i class="fas fa-list-ol"></i>
+        </button>
+        <button type="button" class="toolbar-btn" data-command="formatBlock" data-value="blockquote" title="Quote">
+          <i class="fas fa-quote-right"></i>
+        </button>
+      </div>
+
+      <div class="toolbar-group">
+        <button type="button" class="toolbar-btn" data-command="formatBlock" data-value="h3" title="Heading">
+          <i class="fas fa-heading"></i>
+        </button>
+        <button type="button" class="toolbar-btn" data-command="removeFormat" title="Clear Formatting">
+          <i class="fas fa-eraser"></i>
+        </button>
+      </div>
+
+      <div class="toolbar-group">
+        <button type="button" class="toolbar-btn" id="addQuestion" title="Add Question Template">
+          <i class="fas fa-plus-circle"></i> Add Q
+        </button>
+        <button type="button" class="toolbar-btn" id="addAnswer" title="Add Answer Template">
+          <i class="fas fa-plus-square"></i> Add A
+        </button>
+      </div>
+    </div>
+
+    <!-- Rich Text Editor -->
+    <div class="editor-container">
+      <div id="faqEditor" contenteditable="true" class="rich-text-editor"></div>
+    </div>
+
+    <button id="generateBtn">Generate Embed Code</button>
+
+    <div class="output-section">
+      <h2>Generated Embed Code:</h2>
+      <textarea id="output" readonly></textarea>
+      <button id="copyBtn">Copy to Clipboard</button>
+
+      <h2>Live Preview:</h2>
+      <div id="preview"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
